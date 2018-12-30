@@ -3,9 +3,14 @@ function [aNorm, aCentNorm] = SubCoeffsA(envelope)
 %   Detailed explanation goes here
 
 a = abs(envelope);
+% a = a - (max(a)-1);
+
 aMean = mean(a);
 aNorm = a / aMean;
 aCentNorm = aNorm - 1;
+
+% aNorm = a / max(a);
+% aCentNorm = aNorm - 0.5;
 
 % figure(2);
 % subplot(3,1,1); plot(a); grid on;

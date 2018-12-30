@@ -25,11 +25,11 @@ phiN = phiCent;
 % subplot(2,2,4); plot(phiCent); grid on;
 
 C = length(phiN);
-sumPhiNL2 = sum(phiN .* phiN);
+sumPhiNL2 = sum(phiN .^2);
 sumAbsPhiNL = sum(abs(phiN));
 sumPhiNL = sum(phiN);
-sigmaAP = sqrt((sumPhiNL2/C) - ((sumAbsPhiNL/C) * (sumAbsPhiNL/C)));
-sigmaDP = sqrt((sumPhiNL2/C) - ((sumPhiNL/C) * (sumPhiNL/C)));
+sigmaAP = sqrt((sumPhiNL2/C) - ((sumAbsPhiNL/C) ^ 2)); % check when it is possible to become complex
+sigmaDP = sqrt((sumPhiNL2/C) - ((sumPhiNL/C) ^ 2));
 
 end
 
